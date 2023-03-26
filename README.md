@@ -4,7 +4,7 @@
 
 DevCloud is a one-stop, cloud-based DevOps platform that provides a bundle of out-of-the-box cloud services covering requirement delivery, code commit, code build, verification, deployment, and release. DevCloud streamlines software delivery, provides end-to-end software R&D support, and enables you to fully implement DevOps. 
 
-![figure1](.others/images/figure1.jpg)
+![figure1](./others/images/figure1.jpg)
 
 <p align="center"> Figure 1.0 : DevCloud Architecture </p>
 
@@ -18,7 +18,7 @@ DevCloud is a one-stop, cloud-based DevOps platform that provides a bundle of ou
 
 In this walk-through, we are going to demonstrate how to use Huawei DevCloud to build CI/CD pipeline for DevOps purposes. The solution is as shown below that illustrate two different automated pipelines used in different environments namely automated continuous integration (CI) pipeline that deploy application in development, system integration testing and user acceptance test environment, and automated continuous deployment (CD) pipeline that deploy application in production environment. The automated pipelines utilize the features provided in Huawei DevCloud such as CodeHub, CodeCheck, CloudBuild and CloudDeploy which integrate with Huawei Cloud services such as Software Repositories Warehouse (SWR) and Cloud Container Engine (CCE). The overall solution is to deploy a demo application with image tagging to testing environment before it can release to production environment with an approval from project manager to determine which version to release.
 
-![figure2](./images/figure2.jpg)
+![figure2](./others/images/figure2.jpg)
 
 <p align="center"> Figure 2.0 : Automated CI/CD pipeline Flow Diagram </p>
 
@@ -43,7 +43,7 @@ In this walk-through, we are going to demonstrate how to use Huawei DevCloud to 
     * Create a Huawei Cloud master account and add sub-accounts under the master accounts. Steps can refer to 4.2 below.
     * Obtain Access key & Security Key at My credentials > Access keys > Create Access key.
 
-![figure3](./images/figure3.jpg)
+![figure3](./others/images/figure3.jpg)
 
 <p align="center"> Figure 3.0 : Huawei Credentials </p>
 
@@ -68,50 +68,50 @@ Terraform by HashiCorp, is an “infrastructure as code” that allows you  to b
 
 In this walk-through, we will be using three different environments with each of it have its own purpose as shown in diagram below. The environments is created in three different sub-accounts in which the billing is controlled by a master account. The multi-account structure is to ease the management of the resources and restrict the access of multiple developer teams which specific to dedicated resources and accounts.
 
-![figure4](./images/figure4.jpg)
+![figure4](./others/images/figure4.jpg)
 
 <p align="center"> Figure 4.0 : Multi-account Structure for Demo Environment </p>
 
 ##### 4.2.1 Create Sub-Account
 1. Log in to your master account at https://auth.huaweicloud.com/authui/login.html?locale=en-us&service=https%3A%2F%2Fwww.huaweicloud.com%2Fintl%2Fen-us%2F#/login using your credentials.
 
-![figure4.1](./images/figure4.1.jpg)
+![figure4.1](./others/images/figure4.1.jpg)
 
 <p align="center"> Figure 4.1 : Huawei Login Page </p>
 
 2.	On the console page, at the navigation pane, click More > Enterprise > Organizations and Accounts
 
-![figure4.2](./images/figure4.2.jpg)
+![figure4.2](./others/images/figure4.2.jpg)
 
 <p align="center"> Figure 4.2 : Huawei Cloud Management Console </p>
 
 3.	In Organization and Accounts page, click Add Member Accounts as shown in Figure 4.3.
 
-![figure4.3](./images/figure4.3.jpg)
+![figure4.3](./others/images/figure4.3.jpg)
 
 <p align="center"> Figure 4.3 : Organization and Accounts in Enterprise Center </p>
 
 4.	Click Create Member Account.
 
-![figure4.4](./images/figure4.4.jpg)
+![figure4.4](./others/images/figure4.4.jpg)
 
 <p align="center"> Figure 4.4 : Organization and Accounts in Enterprise Center </p>
 
 5.	In the displayed page, set the parameter as prompted and click Next.
 
-![figure4.5](./images/figure4.5.jpg)
+![figure4.5](./others/images/figure4.5.jpg)
 
 <p align="center"> Figure 4.5 : Member accounts configuration </p>
 
 6.	Tick the checkbox as below and click Next.
 
-![figure4.6](./images/figure4.6.jpg)
+![figure4.6](./others/images/figure4.6.jpg)
 
 <p align="center"> Figure 4.6 : Member account’s configuration </p>
 
 7.	Click Obtain Verification Code. Check your email address to obtain the verification code. After fill in the verification code. Click Submit.
 
-![figure4.7](./images/figure4.7.jpg)
+![figure4.7](./others/images/figure4.7.jpg)
 
 <p align="center"> Figure 4.7 : Verification Code in creating member account </p>
 
@@ -120,19 +120,19 @@ In order to create resources in Sub-Account, It is necessary to allocate the bud
 1.	On the console page, at the navigation pane, click More > Enterprise > Organizations and Accounts.
 2.	In the navigation pane on the left, choose Accounting Management > Budget Management. 
 
-![figure4.8](./images/figure4.8.jpg)
+![figure4.8](./others/images/figure4.8.jpg)
 
 <p align="center"> Figure 4.8 : Allocating Budget to sub-account </p>
 
 3.	On the Budget Management page, choose BudgetAllocation tab. Locate the member and click Allocate.
 
-![figure4.9](./images/figure4.9.jpg)
+![figure4.9](./others/images/figure4.9.jpg)
 
 <p align="center"> Figure 4.9 : Allocating Budget to sub-account </p>
 
 4.	Fill in the Amount to Allocate (USD) and click Submit.
 
-![figure4.10](./images/figure4.10.jpg)
+![figure4.10](./others/images/figure4.10.jpg)
 
 <p align="center"> Figure 4.10 : Allocating Budget to sub-account </p>
 
@@ -146,11 +146,11 @@ In order to create resources in Sub-Account, It is necessary to allocate the bud
 2.	Configure the parameter as prompted.
 3.	Click OK
 
-![figure4.11](./images/figure4.11.jpg)
+![figure4.11](./others/images/figure4.11.jpg)
 
 <p align="center"> Figure 4.11 : Create new project in DevCloud console </p>
 
-![figure4.12](./images/figure4.12.jpg)
+![figure4.12](./others/images/figure4.12.jpg)
 
 <p align="center"> Figure 4.12 : Create new project in DevCloud console </p>
 
@@ -158,14 +158,14 @@ In order to create resources in Sub-Account, It is necessary to allocate the bud
 In this demo, we will use CodeHub for storing, tracking, and collaborating on software projects. It’s version control system, which allows for seamless collaboration without compromising the integrity of the original project. Steps of creating Repository in CodeHub is shown below:
 1.	On DevCloud homepage, at the top navigation bar, click DevCloud > CodeHub.
 
-![figure4.13](./images/figure4.13.jpg)
+![figure4.13](./others/images/figure4.13.jpg)
 
 <p align="center"> Figure 4.13 : CodeHub management console in Huawei DevCloud </p>
 
 2.	On the CodeHub page, click Create Directly.
 3.	Configure the parameter as prompted.
 
-![figure4.14](./images/figure4.14.jpg)
+![figure4.14](./others/images/figure4.14.jpg)
 
 <p align="center"> Figure 4.14 : CodeHub management console in Huawei DevCloud </p>
 
@@ -175,7 +175,7 @@ When working with a CodeHub repository, you'll need to identify yourself to Code
 ```ssh-keygen```
 2.	Check the SSH key generated in .ssh folder as below.
 
-![figure4.15](./images/figure4.15.jpg)
+![figure4.15](./others/images/figure4.15.jpg)
 
 <p align="center"> Figure 4.15 : SSH key generation using ssh-keygen in CLI </p>
 
@@ -184,20 +184,20 @@ When working with a CodeHub repository, you'll need to identify yourself to Code
 
 3.	On the CodeHub page, click the setting icon beside the Create Directly button and select Set SSH Key. 
 
-![figure4.16](./images/figure4.16.jpg)
+![figure4.16](./others/images/figure4.16.jpg)
 
 <p align="center"> Figure 4.16 : CodeHub management console in Huawei DevCloud </p>
 
 4.	Click Add SSH Key on displayed page.
 
-![figure4.17](./images/figure4.17.jpg)
+![figure4.17](./others/images/figure4.17.jpg)
 
 <p align="center"> Figure 4.17 : SSH key configuration in DevCloud console </p>
 
 5.	On the displayed page, paste the SSH key generated.
 6.	Tick the checkbox and click OK.
 
-![figure4.18](./images/figure4.18.jpg)
+![figure4.18](./others/images/figure4.18.jpg)
 
 <p align="center"> Figure 4.18 : SSH key configuration in DevCloud console </p>
 
@@ -210,7 +210,7 @@ Cloning a repository is typically only done once, at the beginning of your inter
 1.	Click the directly that create above to go into the directly homepage.
 2.	On the directly homepage, click Clone/Download and copy the ssh link as prompted below.
 
-![figure4.19](./images/figure4.19.jpg)
+![figure4.19](./others/images/figure4.19.jpg)
 
 <p align="center"> Figure 4.19 : CodeHub repository in Huawei DevCloud </p>
 
@@ -227,7 +227,7 @@ The demo in this walk-through includes three different scenarios that deploy a d
 
 **Purpose:** In this demo, we’re going to automate the continuous integration for DEV/SIT/UAT environments with the used of CI pipeline. Developer who is responsible for the code development and changes are required to submit code to the CodeHub repository by using Git command. New commit to the CodeHub will trigger the process of CloudBuild that create the demo-apps container image which then perform tagging and push the image to Software Repository for Container (SWR). CloudDeploy will deploy the image to Huawei Cloud Container Engine (CCE) cluster that resides in either DEV, SIT or UAT environment before the application can run in production environment. 
 
-![figure5.0](./images/figure5.0.jpg)
+![figure5.0](./others/images/figure5.0.jpg)
 
 <p align="center"> Figure 5.0 : Automated CI Pipeline Flow Diagram in SIT Environment </p>
 
@@ -236,13 +236,13 @@ The pipeline will be built in the DevOps account and the deployment will be depl
 **Step by steps to subscribe DevCloud services:**
 Subscribe the DevCloud services as shown in Figure 5.1.
 
-![figure5.1](./images/figure5.1.jpg)
+![figure5.1](./others/images/figure5.1.jpg)
 
 <p align="center"> Figure 5.1 : Huawei DevCloud CloudBuild Subscription Page </p>
 
 Once subscription done, click the button on the upper right corner to access the DevCloud service as shown in Figure 5.2.
 
-![figure5.2](./images/figure5.2.jpg)
+![figure5.2](./others/images/figure5.2.jpg)
 
 <p align="center"> Figure 5.2 : Huawei DevCloud Management Console </p>
 
@@ -253,55 +253,55 @@ The usage of CloudBuild in this walk-through is to package and build a container
 
 Step 1: To build a CI pipeline, we need to configure the task in CloudBuild and CloudDeploy. On the console bar, select CloudBuild as shown in Figure 5.3.
 
-![figure5.3](./images/figure5.3.jpg)
+![figure5.3](./others/images/figure5.3.jpg)
 
 <p align="center"> Figure 5.3 : Huawei DevCloud Workspace </p>
 
 Step 2: Create a new task in CloudBuild with the selected CodeHub repository in which your development code stored. Retain the default code branch as a master branch.
 
-![figure5.4](./images/figure5.4.jpg)
+![figure5.4](./others/images/figure5.4.jpg)
 
 <p align="center"> Figure 5.4 : CloudBuild - Initial Configuration and Setup </p>
 
 Step 3: Choose a blank template in this demo.
 
-![figure5.5](./images/figure5.5.jpg)
+![figure5.5](./others/images/figure5.5.jpg)
 
 <p align="center"> Figure 5.5 : CloudBuild - Initial Configuration and Setup </p>
 
 Step 4: Before we configure the build actions, create the custom parameter as shown below to be used in the function in build actions later. The parameter value of buildVersion is v1.$(INCREASENUM) indicates for every build of the container image will increment by a value of 0.1.
 
-![figure5.6](./images/figure5.6.jpg)
+![figure5.6](./others/images/figure5.6.jpg)
 
 <p align="center"> Figure 5.6 : CloudBuild - Custom Parameter Settings </p>
 
 Step 5: Next, configure the build actions in CloudBuild. Select the function named Build Image and Push to SWR as shown in Figure 5.7.
 
-![figure5.7](./images/figure5.7.jpg)
+![figure5.7](./others/images/figure5.7.jpg)
 
 <p align="center"> Figure 5.7 : CloudBuild - Build Action Functions </p>
 
 Step 6: If you already have an organization created in SWR, please skip this step and proceed to the next. If you do not have an organization created in SWR, please create one by navigating to the SWR console. Under organization management, click the create organization button at the upper right corner. Input your organization name and enter save. 
 
-![figure5.8](./images/figure5.8.jpg)
+![figure5.8](./others/images/figure5.8.jpg)
 
 <p align="center"> Figure 5.8 : SWR Organization Management </p>
 
 Step 7: Insert the custom parameters that create in the previous step as your Image Name and Image Tag by using the dollar signs and bracket. Input your SWR organization name while retaining other values as default as shown in Figure 5.9.
 
-![figure5.9](./images/figure5.9.jpg)
+![figure5.9](./others/images/figure5.9.jpg)
 
 <p align="center"> Figure 5.9 : CloudBuild - Build Image and Push to SWR </p>
 
 Step 8: Select the second function named as Upload to Release Repository. You may insert any name as your folder directory to store your build package. In this demo, we stored the build package in the Fixed-Release-Version folder as shown in Figure 5.10.
 
-![figure5.10](./images/figure5.10.jpg)
+![figure5.10](./others/images/figure5.10.jpg)
 
 <p align="center"> Figure 5.10 : CloudBuild - Upload to Release Repository </p>
 
 Step 9: Test run the CloudBuild to verify that the image is built and pushed to SWR.
 
-![figure5.11](./images/figure5.11.jpg)
+![figure5.11](./others/images/figure5.11.jpg)
 
 <p align="center"> Figure 5.11 : CloudBuild - Running the Build Task </p>
 
@@ -313,57 +313,57 @@ Step 1: In this part of the configuration, we required to provision a cluster in
 ```terraform plan```
 ```terraform apply -auto-approve```
 
-![figure5.12](./images/figure5.12.jpg)
+![figure5.12](./others/images/figure5.12.jpg)
 
 <p align="center"> Figure 5.12 : Provision Kubernetes Cluster in Huawei CCE </p>
 
 Step 2: Once provision cluster successfully in Huawei CCE, obtain the kubectl configuration scripts to be used in CloudDeploy in a later step as shown in Figure 5.13.
 
-![figure5.13](./images/figure5.13.jpg)
+![figure5.13](./others/images/figure5.13.jpg)
 
 <p align="center"> Figure 5.13 : Obtain kubectl configuration scripts in Huawei CCE management console </p>
 
 Step 3: Navigate back to CloudDeploy console page, and create a new task in CloudDeploy. Insert your desired task name and the created project name.
 
-![figure5.14](./images/figure5.14.jpg)
+![figure5.14](./others/images/figure5.14.jpg)
 
 <p align="center"> Figure 5.14 : CloudDeploy - Initial Configuration </p>
 
 Step 4: Select a blank template.
 
-![figure5.15](./images/figure5.15.jpg)
+![figure5.15](./others/images/figure5.15.jpg)
 
 <p align="center"> Figure 5.15 : CloudDeploy - Initial Configuration </p>
 
 Step 5: Before configuring the build actions, create the custom parameter to be used in configuration later. Enter the SWR url and organization name that obtain from SWR console. In this demo, our image is stored in the Singapore region and the endpoint is as shown in Figure 5.16 below. Specify the latest build version number as the default value of buildVersion parameter.
 
-![figure5.16](./images/figure5.16.jpg)
+![figure5.16](./others/images/figure5.16.jpg)
 
 <p align="center"> Figure 5.16 : CloudDeploy - Custom Parameter Settings </p>
 
 Step 6: Select a function named as Deploy an Application on Kubernetes Clusters. Configure the Kubernetes cluster service endpoint by clicking on the create button as shown below.
 
-![figure5.17](./images/figure5.17.jpg)
+![figure5.17](./others/images/figure5.17.jpg)
 
 <p align="center"> Figure 5.17 : CloudDeploy - Deployment Actions Configuration </p>
 
 Step 7: Enter the Kubernetes URL and content of Kubeconfig that obtained in Step 2.
 
-![figure5.18](./images/figure5.18.jpg)
+![figure5.18](./others/images/figure5.18.jpg)
 
 <p align="center"> Figure 5.18 : CloudDeploy - Kubernetes Service Endpoints Configuration </p>
 
 Step 8: Use kubectl apply command in this task and the file source is the yaml files that stored in Release repository. Enter the folder directory where we stored the deployment code. Click the save button once the configuration done.
 
-![figure5.19](./images/figure5.19.jpg)
-![figure5.20](./images/figure5.20.jpg)
+![figure5.19](./others/images/figure5.19.jpg)
+![figure5.20](./others/images/figure5.20.jpg)
 
 <p align="center"> Figure 5.19 : CloudDeploy - Deploy an Application on Kubernetes Cluster Configuration </p>
 
 Step 9: Configure next task by using two different functions such as run shell commands and run shell scripts as shown in Figure below to conduct the unit test.
 
-![figure5.20a](./images/Figure5.20a.PNG)
-![figure5.20b](./images/Figure5.20b.PNG)
+![figure5.20a](./others/images/Figure5.20a.PNG)
+![figure5.20b](./others/images/Figure5.20b.PNG)
 
 <p align="center"> Figure 5.20 : CloudDeploy - Unit Test in Testing Environment </p>
 
@@ -372,99 +372,99 @@ CloudPipeline combined all the pre-configured tasks such as CodeHub, CloudBuild 
 
 Step 1: Navigate to the CloudPipeline console page to create a new CI pipeline. Retain the default values for project, repository, and, branch if you have only one project and CodeHub repository at the current moment. If you have multiple projects and repositories, select the correct one to be used in this pipeline. 
 
-![figure5.21](./images/figure5.21.jpg)
+![figure5.21](./others/images/figure5.21.jpg)
 
 <p align="center"> Figure 5.21 : CloudPipeline - Initial Configuration </p>
 
 Step 2: Select a blank template.
 
-![figure5.22](./images/figure5.22.jpg)
+![figure5.22](./others/images/figure5.22.jpg)
 
 <p align="center"> Figure 5.22 : CloudPipeline - Initial Configuration </p>
 
 Step 3: Configure the execution plan of the pipeline as triggered when the code is committed.
 
-![figure5.23](./images/figure5.23.jpg)
+![figure5.23](./others/images/figure5.23.jpg)
 
 <p align="center"> Figure 5.23 : CloudPipeline - Execution Plan </p>
 
 Step 4: Configure the custom parameter of the image name as a different name from the previous step. 
 This is to separate the image created from the pipeline.
 
-![figure5.24](./images/figure5.24.jpg)
+![figure5.24](./others/images/figure5.24.jpg)
 
 <p align="center"> Figure 5.24 : CloudPipeline - Custom Parameter Settings </p>
 
 Step 5: Enter a meaningful name for the pipeline.
 
-![figure5.25](./images/figure5.25.jpg)
+![figure5.25](./others/images/figure5.25.jpg)
 
 <p align="center"> Figure 5.25 : CloudPipeline - Basic Information </p>
 
 Step 6: Configure the workflows for the pipeline. Click the plus sign button and configure the task as shown below. This task is to build and package the image to be pushed to SWR. The buildVersion is using the TIMESTAMP pre-defined parameter so that the image build is tag with the timestamp. For example, the image tag version is v1.0-20220504195040.
 
-![figure5.26](./images/figure5.26.jpg)
+![figure5.26](./others/images/figure5.26.jpg)
 
 <p align="center"> Figure 5.26 : CloudPipeline - Workflow Configuration </p>
 
 Step 7: Configure the next task by setting the same parameter as previous step. This task is to deploy the application to CCE cluster, select the task that had configured previously in CloudDeploy as shown in Figure 5.27. Next, configure another task for unit test that had pre-configured in previous step.
 
-![figure5.27](./images/figure5.27.jpg)
-![figure5.27b](./images/Figure5.27b.PNG)
+![figure5.27](./others/images/figure5.27.jpg)
+![figure5.27b](./others/images/Figure5.27b.PNG)
 
 <p align="center"> Figure 5.27 : CloudPipeline - Workflow Configuration </p>
 
 Step 8: Be noted that our private image is stored in SWR of DevOps account where our deployment is in SIT account. We need to share the private image to the SIT account in order to gain access for pulling the image as shown in Figure 5.28 below. Without sharing the image, the deployment in SIT account will not be successful as it will result in a failure to pull the image from the software repository.
 
-![figure5.28](./images/figure5.28.jpg)
+![figure5.28](./others/images/figure5.28.jpg)
 
 <p align="center"> Figure 5.28 : Shared Image in SWR </p>
 
-![figure5.29](./images/figure5.29.jpg)
+![figure5.29](./others/images/figure5.29.jpg)
 
 <p align="center"> Figure 5.29 : Shared Image in SWR </p>
 
 Step 9: Commit changes to our deployment code by using git commit and git push to trigger the pipeline as shown in Figure 5.30. 
 
-![figure5.30](./images/figure5.30.jpg)
+![figure5.30](./others/images/figure5.30.jpg)
 
 <p align="center"> Figure 5.30 : Commit changes to CodeHub by using Git command </p>
 
 Step 10: Navigate to the CloudPipeline console page to observe the build. Figure 5.31 below indicates the build was successful.
 
-![figure5.31](./images/figure5.31.jpg)
+![figure5.31](./others/images/figure5.31.jpg)
 
 <p align="center"> Figure 5.31 : Commit changes to CodeHub by using Git command </p>
 
 Step 11: Navigate to the CCE console page in SIT account, under the workloads of the pod, and observe the status whether it is running or abnormal. It may take some time for the pod to be up and running.
 
-![figure5.32](./images/figure5.32.jpg)
+![figure5.32](./others/images/figure5.32.jpg)
 
 <p align="center"> Figure 5.32 : Observe the deployment status in Huawei CCE management console </p>
 
 Step 12: Once the status of pod is up and running, subscribe a service to allow the external access of pods. Navigate to the network under resource management in the left, select create service, configure the parameters as in Figure 5.33 and Figure 3.34.
 
-![figure5.33](./images/figure5.33.jpg)
+![figure5.33](./others/images/figure5.33.jpg)
 
 <p align="center"> Figure 5.33 : Configure service for the deployment workloads </p>
 
-![figure5.34](./images/figure5.34.jpg)
+![figure5.34](./others/images/figure5.34.jpg)
 
 <p align="center"> Figure 5.34 : Observe the deployment status in Huawei CCE management console </p>
 
 Step 13: Observe the service is successfully created and bind to the workloads.
-![figure5.35](./images/figure5.35.jpg)
+![figure5.35](./others/images/figure5.35.jpg)
 
 <p align="center"> Figure 5.35 : Observe the deployment status in Huawei CCE management console </p>
 
 Step 14: Use the external IP address to access the workloads. If you able to see the webpage as similar to the Figure 5.36, it indicates the deployment is successful.
-![figure5.36](./images/figure5.36.jpg)
+![figure5.36](./others/images/figure5.36.jpg)
 
 <p align="center"> Figure 5.36 : Displayed webpage in web browser </p>
 
 5.2 Demo #2 : Blue-Green deployment strategy for production environment
 
-![figure5.37](./images/figure5.37.jpg)
+![figure5.37](./others/images/figure5.37.jpg)
 
 <p align="center"> Figure 5.37 : Automated CD Pipeline Flow Diagram in Prod Environment </p>
 
@@ -472,7 +472,7 @@ Step 14: Use the external IP address to access the workloads. If you able to see
  
 The terminology used in this scenario is Blue Green deployment where there are two deployments, one indicates stable version and another indicates new release version exist in production environment. In this demo, we will use blue and green version of application to represent two different deployments to be deployed in production environment as shown in Figure 5.38.
 
-![figure5.38](./images/figure5.38.jpg)
+![figure5.38](./others/images/figure5.38.jpg)
 
 <p align="center"> Figure 5.38 : Blue Green Deployment </p>
 
@@ -480,63 +480,63 @@ In the first deploy, the blue version is a latest and stable version that had te
 
 Step 1: Provision a Kubernetes cluster in production account. Obtain the kubeconfig scripts and Kubernetes URL to configure the service endpoints in CloudDeploy. Configure the parameter as shown in Figure 5.39 and Figure 5.40.
 
-![figure5.39](./images/figure5.39.jpg)
+![figure5.39](./others/images/figure5.39.jpg)
 
 <p align="center"> Figure 5.39 : CloudDeploy - Deploy an Application on Kubernetes Clusters </p>
 
-![figure5.40](./images/figure5.40.jpg)
+![figure5.40](./others/images/figure5.40.jpg)
 
 <p align="center"> Figure 5.40 : CloudDeploy - Deploy an Application on Kubernetes Clusters </p>
 
 Step 2: Create a new pipeline in CloudPipeline and configure the custom parameter as shown below. 
-![figure5.41](./images/figure5.41.jpg)
+![figure5.41](./others/images/figure5.41.jpg)
 
 <p align="center"> Figure 5.41 : CloudPipeline - Custom Parameter Settings </p>
 
 Step 3: Add a new task in CloudPipeline to build and pushed image to SWR and follow the parameter as shown below.
-![figure5.42](./images/figure5.42.jpg)
+![figure5.42](./others/images/figure5.42.jpg)
 
 <p align="center"> Figure 5.42 : CloudPipeline - workflow configuration </p>
 
 Step 4: Add a new task as manual review from Project Manager before deploy the application to production environment. Set the review duration accordingly as needed. 
-![figure5.43](./images/figure5.43.jpg)
+![figure5.43](./others/images/figure5.43.jpg)
 
 <p align="center"> Figure 5.43 : CloudPipeline - workflow configuration </p>
 
 Step 5: Add another task to deploy the application to production environment. Select the task created in CloudDeploy in Step 1 for this demo purpose.
-![figure5.44](./images/figure5.44.jpg)
+![figure5.44](./others/images/figure5.44.jpg)
 
 <p align="center"> Figure 5.44 : CloudPipeline - workflow configuration </p>
 
 Step 6: Save the configuration and manually run the pipeline by click on the execute button. Confirm the build version and image name before start the pipeline.
-![figure5.45](./images/figure5.45.jpg)
+![figure5.45](./others/images/figure5.45.jpg)
 
 <p align="center"> Figure 5.45 : CloudPipeline - Runtime parameter configuration </p>
 
 Step 7: An email approval notification would be sent to the project manager to confirm the deployment. Click on the link provided in email, confirm the build version and approve the deployment once confirmed.
-![figure5.46](./images/figure5.46.jpg)
+![figure5.46](./others/images/figure5.46.jpg)
 
 <p align="center"> Figure 5.46 : Email approval notification from Huawei DevCloud CloudPipeline </p>
 
-![figure5.47](./images/figure5.47.jpg)
+![figure5.47](./others/images/figure5.47.jpg)
 
 <p align="center"> Figure 5.47 : Notification window prompt for deployment approval from Project Manager </p>
 
 Step 8: Once the deployment successful, navigate to the production account to check for the deployment. Once the deployment is up and running, bind an ELB as shown below for the deployment workload and obtain the external access IP address. 
 
-![figure5.48](./images/figure5.48.jpg)
+![figure5.48](./others/images/figure5.48.jpg)
 
 <p align="center"> Figure 5.48 : ELB binding and networking services configuration </p>
 
 Step 9: Open your web browser and browse the external IP address together with configured port number. If you see the webpage similar to the Figure 5.49 below, it indicates the deployment successful. Be noted that the image is an exact copy from the SIT environment, the website shown must be the same as in the SIT environment.
 
-![figure5.49](./images/figure5.49.jpg)
+![figure5.49](./others/images/figure5.49.jpg)
 
 <p align="center"> Figure 5.49 : Webpage displayed on web browser </p>
 
 Step 10: Next, we will release a new version with green color background as our second deployment in production environment. Change the execution plan in our created pipeline so that the pipeline would triggered when the code is committed.
 
-![figure5.50](./images/figure5.50.jpg)
+![figure5.50](./others/images/figure5.50.jpg)
 
 <p align="center"> Figure 5.50 : Pipeline execution plan in production environment </p>
 
@@ -551,24 +551,24 @@ Step 12: In our local machine, connect to production cluster by using command as
 ```kubectl config use-context internal```
 ```kubectl config use-context external```
 
-![figure5.51](./images/figure5.51.jpg)
+![figure5.51](./others/images/figure5.51.jpg)
 
 <p align="center"> Figure 5.51 : Connection to Kubernetes cluster of Huawei CCE in local machine </p>
 
 Step 13: Switch the service from blue deployment to green deployment by using command as shown below.
 ```kubectl -n ns-devops patch service svc-prod-demo -p ‘{"spec":{“selector”:{“app”: “php-fpm-nginx-green”}}}'```
 
-![figure5.52](./images/figure5.52.jpg)
+![figure5.52](./others/images/figure5.52.jpg)
 
 <p align="center"> Figure 5.52 : Patch the service to new release green deployment </p>
 
 Step 14: Access the external IP address and observe the webpage had change to green color.
 
-![figure5.53](./images/figure5.53.jpg)
+![figure5.53](./others/images/figure5.53.jpg)
 
 <p align="center"> Figure 5.53 : External access address changed to green deployment </p>
 
-![figure5.54](./images/figure5.54.jpg)
+![figure5.54](./others/images/figure5.54.jpg)
 
 <p align="center"> Figure 5.54 : External access address changed to green deployment </p>
 
@@ -579,7 +579,7 @@ Step 15: (Optional) Enter the command below if you wish to switch back the deplo
 
 **Purpose:** DevCloud provide the features where developers are able to roll back the version of application to previous version in running environment when there is a failure of the application. This minimizes the service downtime and ensures that the user experience is not affected too much. In this demo, the project manager is responsible to confirm the issue and perform the version rollback operation with a specific version number.
 
-![figure5.55](./images/figure5.55.jpg)
+![figure5.55](./others/images/figure5.55.jpg)
 
 <p align="center"> Figure 5.55 : Version Rollback Flow Diagram </p>
 
@@ -588,19 +588,19 @@ From Demo #2, the current version is green version with green color background. 
 Step 1: In a local machine that is connected to production cluster, insert the command below to roll back the version from green to red as shown in Figure 5.56.
 ```kubectl rollout undo -n ns-devops deployment php-fpm-nginx —to-revision=1```
 
-![figure5.56](./images/figure5.56.jpg)
+![figure5.56](./others/images/figure5.56.jpg)
 
 <p align="center"> Figure 5.56 : Version rollback using kubectl command </p>
 
 Step 2: Observe the changes in the webpage. The background had changed to red color.
 
-![figure5.57](./images/figure5.57.jpg)
+![figure5.57](./others/images/figure5.57.jpg)
 
 <p align="center"> Figure 5.57 : Webpage displayed in web browser </p>
 
 Step 3: To perform version rollback in console page, navigate to the CloudDeploy console page. Select the execution number and click the button as shown in Figure 5.58 to perform the version rollback.
 
-![figure5.58](./images/figure5.58.jpg)
+![figure5.58](./others/images/figure5.58.jpg)
 
 <p align="center"> Figure 5.58 : CloudDeploy - Version rollback in management console </p>
 
